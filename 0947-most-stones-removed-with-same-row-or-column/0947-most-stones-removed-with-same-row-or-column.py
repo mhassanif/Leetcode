@@ -1,52 +1,47 @@
+#    :type stones: List[List[int]]
+#    :rtype: int
+
 class Solution(object):
     def removeStones(self, stones):
-        """
-        :type stones: List[List[int]]
-        :rtype: int
-        """
-        class UnionFind:
-            def __init__(self, size):
-                self.parent = list(range(size))
-                self.rank = [1] * size
 
-            def find(self, x):
-                if self.parent[x] != x:
-                    self.parent[x] = self.find(self.parent[x])  # Path compression
-                return self.parent[x]
+        # defaultdict adds a node if not found --> no error
+        from collections import defaultdict
 
-            def union(self, x, y):
-                rootX = self.find(x)
-                rootY = self.find(y)
-                
-                if rootX != rootY:
-                    # Union by rank
-                    if self.rank[rootX] > self.rank[rootY]:
-                        self.parent[rootY] = rootX
-                    elif self.rank[rootX] < self.rank[rootY]:
-                        self.parent[rootX] = rootY
-                    else:
-                        self.parent[rootY] = rootX
-                        self.rank[rootX] += 1
+        #dfs traversal makring vsisited row then cols vise
+        def dfs(x, y):
+            visited.add((x, y))
+            for ny in rows[x]:
+                if (x, ny) not in visited:
+                    dfs(x, ny)
+            for nx in cols[y]:
+                if (nx, y) not in visited:
+                    dfs(nx, y)
 
-        n = len(stones)
-        uf = UnionFind(n)
+        #initiallize dictionaries
+        rows = defaultdict(list)
+        cols = defaultdict(list)
         
-        row_map = {}
-        col_map = {}
+        # setting up the adjacency lists
+        for x, y in stones:
+            rows[x].append(y)
+            cols[y].append(x)
         
-        for i, (x, y) in enumerate(stones):
-            if x not in row_map:
-                row_map[x] = i
-            else:
-                uf.union(row_map[x], i)
-            
-            if y not in col_map:
-                col_map[y] = i
-            else:
-                uf.union(col_map[y], i)
+        # keep track of already explored stones
+        visited = set()
+
+        #counter for seprate components
+        components = 0
         
-        # Find the number of unique components
-        unique_components = len(set(uf.find(i) for i in range(n)))
-        
-        # Maximum number of stones that can be removed is total stones minus number of components
-        return n - unique_components
+        # perform dfs if not aleady visited --> ie new componenet found
+        for x, y in stones:
+            if (x, y) not in visited:
+                dfs(x, y)
+                components += 1
+
+        return len(stones) - components
+
+# builds adjacency lists for stones
+# use DFS to identify/count inter-connected components
+# each component can only leave one stone behind
+#  ie number of remaining stones is equal to components
+# removable stones = total - number of connected components 
