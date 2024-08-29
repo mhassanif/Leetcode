@@ -40,6 +40,7 @@ class Solution(object):
 
         return len(stones) - components
 
+# represent stones as graph nodes with edges
 # builds adjacency lists for stones
 # use DFS to identify/count inter-connected components
 # each component can only leave one stone behind
