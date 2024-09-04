@@ -1,8 +1,8 @@
+# :type chars: List[str]
+# :rtype: int
+
 class Solution(object):
     def compress(self, chars):
-        # :type chars: List[str]
-        # :rtype: int
-        
         s = ""
         current = ''
         count = 0
@@ -18,9 +18,8 @@ class Solution(object):
         
         if count>1:
             s+=str(count)
-        print(s)
+        # print(s)
         chars[:] = list(s)
-
         return len(chars)
 
 
