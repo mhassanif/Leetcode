@@ -14,7 +14,7 @@ class Solution(object):
         start = 0
         end = k
         while end<len(s):
-            print(s[start:end])
+            # print(s[start:end])
             if s[start] in vowels:
                 vowelCount-=1
             if s[end] in vowels:
