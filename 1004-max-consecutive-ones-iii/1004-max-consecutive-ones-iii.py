@@ -21,8 +21,8 @@ class Solution(object):
                 left += 1  # Move the left pointer to shrink the window
             # Calculate the maximum length of valid subarray
             maxLength = max(maxLength, right - left + 1)
-            print(nums[left:right+1])
-            print(right - left + 1)
+            # print(nums[left:right+1])
+            # print(right - left + 1)
         
         return maxLength
 
