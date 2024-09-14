@@ -35,10 +35,16 @@ Explanation:
     - If we encounter more than k zeros, we move the left pointer (shrink the window) until the number of zeros is within the limit.
     - The variable maxLength keeps track of the maximum length of a valid subarray (where the number of flipped 0s is ≤ k).
 '''
-
-
         
+'''
+SOLUTION
 
-        
-
-        
+    def longestOnes(self, A, K):
+        i = 0
+        for j in xrange(len(A)):
+            K -= 1 - A[j]
+            if K < 0:
+                K += 1 - A[i]
+                i += 1
+        return j - i + 1
+'''
