@@ -18,7 +18,7 @@ class Solution(object):
                 # maxDeletions += 1 - nums[left]
                 left += 1
                 # shrink from the left to keep at max 1 zero 
-            print(nums[left:right+1])
+            # print(nums[left:right+1])
 
         return right - left
 
