@@ -7,6 +7,6 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        merged = nums1[:m] + nums2
+        merged = nums1[:m]+nums2
         merged.sort()
         nums1[:] = merged
