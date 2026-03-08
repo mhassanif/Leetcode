@@ -8,6 +8,7 @@ This repository contains my solutions to LeetCode problems.
 | ------- | ------- |
 | [0001-two-sum](https://github.com/mhassanif/Leetcode/tree/main/0001-two-sum/) | Easy |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/mhassanif/Leetcode/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
+| [0080-remove-duplicates-from-sorted-array-ii](https://github.com/mhassanif/Leetcode/tree/main/0080-remove-duplicates-from-sorted-array-ii/) | Medium |
 | [0088-merge-sorted-array](https://github.com/mhassanif/Leetcode/tree/main/0088-merge-sorted-array/) | Easy |
 | [0169-majority-element](https://github.com/mhassanif/Leetcode/tree/main/0169-majority-element/) | Easy |
 ## Hash Table
@@ -32,6 +33,7 @@ This repository contains my solutions to LeetCode problems.
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/mhassanif/Leetcode/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
+| [0080-remove-duplicates-from-sorted-array-ii](https://github.com/mhassanif/Leetcode/tree/main/0080-remove-duplicates-from-sorted-array-ii/) | Medium |
 | [0088-merge-sorted-array](https://github.com/mhassanif/Leetcode/tree/main/0088-merge-sorted-array/) | Easy |
 | [0125-valid-palindrome](https://github.com/mhassanif/Leetcode/tree/main/0125-valid-palindrome/) | Easy |
 ## Divide and Conquer
