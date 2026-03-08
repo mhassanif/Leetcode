@@ -5,10 +5,13 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        sx = sorted(s)
-        tx = sorted(t)
-        if sx==tx:
-            return True
-        else:
+        if len(s)!=len(t):
             return False
-        
+        freq= {}
+        for c in s:
+            freq[c] = freq.get(c,0) + 1
+        for c in t:
+            if c not in freq:
+                return False
+            freq[c]= freq[c]-1
+        return True
