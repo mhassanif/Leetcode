@@ -13,5 +13,7 @@ class Solution(object):
         for c in t:
             if c not in freq:
                 return False
-            freq[c]= freq[c]-1
+            freq[c]-= 1
+            if freq[c] < 0:
+                return False
         return True
