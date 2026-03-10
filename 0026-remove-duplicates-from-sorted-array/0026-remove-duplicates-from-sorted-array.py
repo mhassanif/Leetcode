@@ -4,9 +4,9 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        slow=0
-        for fast in range(1,len(nums)):
-            if nums[fast]!=nums[slow]:
+        slow = 0
+        for fast in range(len(nums)):
+            if nums[slow]!=nums[fast]:
                 slow+=1
                 nums[slow]=nums[fast]
         return slow+1
