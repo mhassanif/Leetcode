@@ -6,11 +6,13 @@ class Solution(object):
         :rtype: int
         """
         idx=[]
+        # mark the positons
         for i in range(len(nums)):
             if nums[i]==val:
                 idx.append(i)
-        moved=0
+        left_shift=0
+        # pop the postions considering shift
         for i in range(len(idx)):
-            nums.pop(idx[i]-moved)
-            moved+=1
+            nums.pop(idx[i]-left_shift)
+            left_shift+=1
         return len(nums)
