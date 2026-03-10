@@ -14,7 +14,7 @@ class Solution(object):
         """
         k = 0 # copy position
         for i in range(len(nums)):
-            if nums[i]==val:
+            if nums[i]!=val:
                 # copy non-val back 
                 nums[k]=nums[i]
                 k+=1
