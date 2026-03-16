@@ -5,6 +5,20 @@ class Solution(object):
         :type k: int
         :rtype: None Do not return anything, modify nums in-place instead.
         """
-        k = k % len(nums)
-        nums[:] = nums[-k:] + nums[:-k] 
+        # slicing method
+
+        # k = k % len(nums)
+        # nums[:] = nums[-k:] + nums[:-k] 
+
+        # reverse method
+        def reverse(l,r):
+            while (l < r):
+                nums[l],nums[r] = nums[r],nums[l]
+                l+=1
+                r-=1
+                
+        n = len(nums)
+        reverse(0,n-1) # reverse whole aray
+        reverse(0,k-1) # reverse first k 
+        reverse(k,n-1) # reverse remaning
         
