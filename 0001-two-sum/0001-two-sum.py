@@ -5,9 +5,9 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        visited = {}
-        for i,num in enumerate(nums):
-            need = target - num
-            if need in visited:
-                return [visited[need],i]
-            visited[num]=i
+        available = {}
+        for i,x in enumerate(nums):
+            need = target - x
+            if need in available: 
+                return [available[need],i]
+            available[x] = i           
