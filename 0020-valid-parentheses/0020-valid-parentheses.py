@@ -4,13 +4,18 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        pairs = {')':'(',']':'[','}':'{'}
-        stack=[]
+        pairs = {
+            ')':'(',
+            ']':'[',
+            '}':'{'
+        }
+        stack = []
         for c in s:
             if c in '([{':
                 stack.append(c)
-            else:
+            elif c in ')]}':
                 if not stack or stack[-1]!=pairs[c]:
                     return False
                 stack.pop()
         return len(stack)==0
+            
