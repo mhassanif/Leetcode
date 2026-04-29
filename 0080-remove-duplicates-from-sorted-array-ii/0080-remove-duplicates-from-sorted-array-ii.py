@@ -15,6 +15,8 @@ class Solution(object):
                 count+=1
             
             if count<=2:
+                # count below limit of 2 , then write value
+                # if same elemnt excuceeded count, dont write futher occurences
                 nums[slow]=nums[i]
                 slow+=1
         return slow
