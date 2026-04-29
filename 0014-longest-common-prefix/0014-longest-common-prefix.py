@@ -4,19 +4,13 @@ class Solution(object):
         :type strs: List[str]
         :rtype: str
         """
-        prefix = ""
-
-        # iterate char postions
+        prefix=""
         for i in range(len(strs[0])):
-            # current char check
-            char = strs[0][i]
-            # check evey word for this char
-            for word in strs:
-                if i>=len(word) or word[i]!=char:
-                    # lenght exceed or mismatch
+            char=strs[0][i]
+            for j in range(len(strs)):
+                if len(strs[j])<=i or strs[j][i]!=char:
                     return prefix
-            # all strings matched char - add it to prefix
-            prefix+=char
+            prefix+=char    
         return prefix
         
         
