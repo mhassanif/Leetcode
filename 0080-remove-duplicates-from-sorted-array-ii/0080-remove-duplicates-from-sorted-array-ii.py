@@ -6,12 +6,16 @@ class Solution(object):
         """
         slow=1
         count=1
-        for fast in range(1,len(nums)):
-            if nums[fast-1]!=nums[fast]:
-                count=1
+        for i in range(1,len(nums)):
+            if nums[i-1]!=nums[i]:
+                # prev element not same
+                count=1 # new element first occurence
             else:
+                # its the same element again
                 count+=1
+            
             if count<=2:
-                nums[slow]=nums[fast]
+                nums[slow]=nums[i]
                 slow+=1
         return slow
+
